@@ -42,3 +42,6 @@ next-env.d.ts
 
 # editor settings
 .vscode/
+
+# package-lock
+package-lock.json
