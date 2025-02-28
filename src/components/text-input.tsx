@@ -14,9 +14,9 @@ export function TextInputRoot({ error = false, ...props }: TextInputRootProps) {
   )
 }
 
-interface TextInputIconProps extends ComponentProps<'span'> {}
+// interface TextInputIconProps extends ComponentProps<'span'> {}
 
-export function TextInputIcon(props: TextInputIconProps) {
+export function TextInputIcon(props: ComponentProps<'span'>) {
   return (
     <span
       className="text-gray-400 group-focus-within:text-gray-100 group-[&:not(:has(input:placeholder-shown))]:text-gray-100 group-data-[error=true]:text-danger"
@@ -25,8 +25,8 @@ export function TextInputIcon(props: TextInputIconProps) {
   )
 }
 
-interface TextInputFieldProps extends ComponentProps<'input'> {}
+// interface TextInputFieldProps extends ComponentProps<'input'> {}
 
-export function TextInputField(props: TextInputFieldProps) {
+export function TextInputField(props: ComponentProps<'input'>) {
   return <input className="flex-1 outline-0 placeholder-gray-400" {...props} />
 }
