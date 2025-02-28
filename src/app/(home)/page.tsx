@@ -1,5 +1,6 @@
 // Importing external dependencies
 import Image from 'next/image'
+import { Suspense } from 'react'
 
 // Importing images
 import { Radio } from 'lucide-react'
@@ -46,7 +47,9 @@ export default function Home() {
         </div>
 
         {/* Subscription form */}
-        <SubscriptionForm />
+        <Suspense>
+          <SubscriptionForm />
+        </Suspense>
       </div>
     </div>
   )
