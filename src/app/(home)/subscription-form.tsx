@@ -93,7 +93,7 @@ export function SubscriptionForm() {
         </div>
       </div>
 
-      <Button>
+      <Button type="submit">
         Confirmar
         <ArrowRight />
       </Button>
