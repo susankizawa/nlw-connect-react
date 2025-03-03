@@ -41,7 +41,7 @@ export function InviteLinkInput({ inviteLink }: InviteLinkInputProps) {
         <Link className="size-5" />
       </TextInputIcon>
       <TextInputField defaultValue={inviteLink} readOnly />
-      <IconButton className="-mr-2 relative size-8" onClick={copyInviteLink}>
+      <IconButton className="-mr-2" onClick={copyInviteLink}>
         {/* Shows Check icon if isCopied is true and a Copy icon if not */}
         {isCopied ? <Check className="size-5" /> : <Copy className="size-5" />}
       </IconButton>
