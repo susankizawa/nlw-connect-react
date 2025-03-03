@@ -56,4 +56,8 @@ This video showcases how the subscription form input is validated and how error 
 - [Orval](https://orval.dev)
 - [Vercel](https://vercel.com/home)
 
+## Environment variables
+
+- `BACKEND_URL`: backend API URL that will be used to communicate with the backend
+
 ## Future improvements
