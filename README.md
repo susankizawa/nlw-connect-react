@@ -43,5 +43,6 @@ This project was developed during the React Course for NLW Connect 2025. The pro
 - [Typescript](https://www.typescriptlang.org)
 - [Zod](https://zod.dev)
 - [Orval](https://orval.dev)
+- [Vercel](https://vercel.com/home)
 
 ## Future improvements
