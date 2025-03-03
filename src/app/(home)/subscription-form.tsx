@@ -103,10 +103,7 @@ export function SubscriptionForm() {
         </div>
       </div>
 
-      <Button
-        type="submit"
-        className={status === 'idle' ? 'enabled' : 'disabled'}
-      >
+      <Button type="submit" disabled={status !== 'idle'}>
         {status === 'idle' && (
           <>
             Confirmar
