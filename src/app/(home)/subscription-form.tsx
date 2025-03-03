@@ -52,10 +52,10 @@ export function SubscriptionForm() {
         referrerId,
       })
 
-      setTimeout(() => setStatus('success'), 3000)
+      setStatus('success')
 
-      setTimeout(() => router.push(`/invite/${subscriberId}`), 4000)
-    } catch (error) {
+      setTimeout(() => router.push(`/invite/${subscriberId}`), 500) // 500ms = 0.5s
+    } catch {
       setStatus('idle')
     }
   }
