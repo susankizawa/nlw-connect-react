@@ -32,6 +32,12 @@ Este projeto foi desenvolvido durante a trilha de React no NLW Connect 2025. O p
     - **Inscrições concluídas** através do seu link
     - Sua **posição no ranking** em relação aos outros participantes
 
+## Validação e Mensagens de Erro com Zod
+
+https://github.com/user-attachments/assets/98b95441-0483-4a14-89cc-371c931ce664
+
+Este vídeo mostra como a validação do formulário e as mensagens de erro são exibidas quando o usuário preenche informações incorretas. As validações são feitas com Zod, garantindo feedback claro e preciso para o usuário.
+
 ## Comandos para Setup
 
 - `$env:BACKEND_URL=URL_DO_BACKEND; npx orval`: comando para atualizar os métodos da API do backend no Windows para usar a URL <URL_DO_BACKEND>
