@@ -56,7 +56,9 @@ export function SubscriptionForm() {
 
       setTimeout(() => router.push(`/invite/${subscriberId}`), 500) // 500ms = 0.5s
     } catch (error) {
-      console.error(error)
+      if (error instanceof Error) {
+        console.error(error)
+      }
     }
   }
 
