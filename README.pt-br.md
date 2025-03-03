@@ -57,7 +57,7 @@ Este vídeo mostra como a validação do formulário e as mensagens de erro são
 
 ## Variáveis de ambiente
 
-- `BACKEND_URL`: URL da API do backend para se comunicar com o frontend
+- `BACKEND_URL`: URL da API do backend para comunicação com o backend
 
 ## Melhorias futuras
 
