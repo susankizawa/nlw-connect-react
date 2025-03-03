@@ -78,7 +78,8 @@ export function SubscriptionForm() {
         {/* Errors */}
         {serverError && (
           <p className="text-danger text-xs font-semibold">
-            Oops, something went wrong. Please try again.
+            Opa, algo de errado não está certo. Por favor tente novamente em
+            alguns instantes.
           </p>
         )}
 
