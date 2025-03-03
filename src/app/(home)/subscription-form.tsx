@@ -3,6 +3,7 @@
 // Importing external dependencies
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -10,7 +11,7 @@ import { z } from 'zod'
 import { subscribeToEvent } from '@/http/api'
 
 // Importing images
-import { ArrowRight, Mail, User } from 'lucide-react'
+import { ArrowRight, Check, Mail, User } from 'lucide-react'
 
 // Importing local components
 import { Button } from '@/components/button'
@@ -30,6 +31,7 @@ type SubscriptionSchema = z.infer<typeof subscriptionSchema>
 export function SubscriptionForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle')
 
   const {
     register,
@@ -40,14 +42,22 @@ export function SubscriptionForm() {
   })
 
   async function onSubscribe({ name, email }: SubscriptionSchema) {
-    const referrerId = searchParams.get('referrer')
-    const { subscriberId } = await subscribeToEvent({
-      name,
-      email,
-      referrerId,
-    })
+    setStatus('loading')
 
-    router.push(`/invite/${subscriberId}`)
+    try {
+      const referrerId = searchParams.get('referrer')
+      const { subscriberId } = await subscribeToEvent({
+        name,
+        email,
+        referrerId,
+      })
+
+      setStatus('success')
+
+      setTimeout(() => router.push(`/invite/${subscriberId}`), 500) // 500ms = 0.5s
+    } catch {
+      setStatus('idle')
+    }
   }
 
   return (
@@ -93,9 +103,23 @@ export function SubscriptionForm() {
         </div>
       </div>
 
-      <Button type="submit">
-        Confirmar
-        <ArrowRight />
+      <Button
+        type="submit"
+        className={status === 'idle' ? 'enabled' : 'disabled'}
+      >
+        {status === 'idle' && (
+          <>
+            Confirmar
+            <ArrowRight />
+          </>
+        )}
+        {status === 'loading' && 'Processando...'}
+        {status === 'success' && (
+          <>
+            Inscrição confirmada!
+            <Check />
+          </>
+        )}
       </Button>
     </form>
   )
