@@ -4,7 +4,7 @@
 
 ## Description
 
-This project was developed during the React Course for NLW Connect 2025. The project consists of the frontend of a subscription site for a fictitious event that is currently being hosted on [Vercel](https://vercel.com/home), including a ranking system based on invites.
+This project was developed during the React Course for NLW Connect 2025. The project consists of the frontend of a subscription site for a fictitious event, including a ranking system based on invites. The frontend is currently being hosted on [Vercel](https://vercel.com/home).
 
 - [Published site](https://nlw-connect-react-three.vercel.app)
 - [Backend repository](https://github.com/susankizawa/nlw-connect-node-js)
