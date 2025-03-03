@@ -17,6 +17,9 @@ Este projeto foi desenvolvido durante a trilha de React no NLW Connect 2025. O p
 
 - **Sistema de convites**
   - Cada inscrito recebe um **link de convite** exclusivo
+ 
+![2025-03-03 16-01-25](https://github.com/user-attachments/assets/797459c8-9715-4eeb-bd0a-87bfe3c2b3f2)
+
   - A cada nova inscrição feita por meio do link, o usuário acumula **pontos**
 
 - **Ranking de participantes**
