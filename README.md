@@ -33,6 +33,12 @@ This project was developed during the React Course for NLW Connect 2025. The pro
     -  **Subscriptions done** through their link
     -  Their **ranking position** in relation to other participants
 
+## Validation and Error Messages with Zod
+
+https://github.com/user-attachments/assets/98b95441-0483-4a14-89cc-371c931ce664
+
+This video showcases how the subscription form input is validated and how error messages are shown to the user when they put in incorrect information. The validation is done with Zod, guaranteeing clear and precise feedback to the user.
+
 ## Commands for Setup
 
 - `$env:BACKEND_URL=BACKEND_URL; npx orval`: command to update backend API methods on Windows to use the URL <BACKEND_URL>
