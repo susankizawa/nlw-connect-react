@@ -17,6 +17,9 @@ This project was developed during the React Course for NLW Connect 2025. The pro
 
 - **Invite system**
   - Every subscriber receives an exclusive **invite link**
+ 
+![2025-03-03 16-01-25](https://github.com/user-attachments/assets/797459c8-9715-4eeb-bd0a-87bfe3c2b3f2)
+
   - For every new subscribe made through this link, the user accumulates points
 
 - **Participant ranking**
