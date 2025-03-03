@@ -1,4 +1,4 @@
-[EN English](#english) | [BR Português](#portugues)
+[EN English](#english) | [BR Português](#português)
 
 # NLW Connect React Trail
 
@@ -36,4 +36,4 @@ a
 
 Repository for project of the React trail of the NLW Connect of 2025.
 
-## Portugues
+## Português
