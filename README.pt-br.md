@@ -42,6 +42,7 @@ Este projeto foi desenvolvido durante a trilha de React no NLW Connect 2025. O p
 - [Typescript](https://www.typescriptlang.org)
 - [Zod](https://zod.dev)
 - [Orval](https://orval.dev)
+- [Vercel](https://vercel.com/home)
 
 ## Variáveis de ambiente
 
