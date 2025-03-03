@@ -63,7 +63,7 @@ This video showcases how the subscription form input is validated and how error 
 ## Future improvements
 
 - [ ] Make functional share in social media buttons
-- [ ] Integrate OpenAuth authentication to event subscription via the following platforms:
+- [ ] Integrate OAuth authentication to event subscription via the following platforms:
 	- [ ] Discord
 	- [ ] Google
 - [ ] Make it actually send an email to the subscriber
