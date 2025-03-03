@@ -32,6 +32,7 @@ export function InviteLinkInput({ inviteLink }: InviteLinkInputProps) {
       setIsCopied(false)
     }, 1000) // 1000ms = 1s
 
+    // Copies TextInputField text (the invite link) to user's clipboard
     navigator.clipboard.writeText(inviteLink)
   }
 
