@@ -18,7 +18,7 @@ interface InviteProps {
 export default async function Invite(props: InviteProps) {
   const { subscriberId } = await props.params
 
-  const inviteLink = `https://nlw-connect-node-js.onrender.com/invites/${subscriberId}`
+  const inviteLink = `${process.env.BACKEND_URL}/invites/${subscriberId}`
 
   return (
     <div className="min-h-dvh flex items-center justify-between gap-16 flex-col md:flex-row">
