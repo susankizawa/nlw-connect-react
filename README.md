@@ -1,5 +1,7 @@
 # NLW Connect - React Course
 
+[PT-BR](README.pt-br.md)
+
 ## Description
 
 This project was developed during the React Course for NLW Connect 2025. The project consists of the frontend of a subscription site for a fictitious event, including a ranking system based on invites.
