@@ -61,6 +61,10 @@ Este vídeo mostra como a validação do formulário e as mensagens de erro são
 
 ## Melhorias futuras
 
-
+- [ ] Adicionar botões funcionais para compartilhamento em redes sociais
+- [ ] Integrar autenticação OpenAuth na inscrição do evento através das seguintes plataformas:
+	- [ ] Discord
+	- [ ] Google
+- [ ] Fazer com que o aplicativo web realmente mande um email para o inscrito
 
 
