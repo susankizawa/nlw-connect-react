@@ -61,7 +61,7 @@ export type GetRanking200 = {
 export const getHelloWorldUrl = () => {
 
 
-  return `https://nlw-connect-node-js.onrender.com/hello`
+  return `http://localhost:3030/hello`
 }
 
 export const helloWorld = async ( options?: RequestInit): Promise<HelloWorld200> => {
@@ -89,7 +89,7 @@ export const helloWorld = async ( options?: RequestInit): Promise<HelloWorld200>
 export const getSubscribeToEventUrl = () => {
 
 
-  return `https://nlw-connect-node-js.onrender.com/subscriptions`
+  return `http://localhost:3030/subscriptions`
 }
 
 export const subscribeToEvent = async (subscribeToEventBody: SubscribeToEventBody, options?: RequestInit): Promise<SubscribeToEvent201> => {
@@ -118,7 +118,7 @@ export const subscribeToEvent = async (subscribeToEventBody: SubscribeToEventBod
 export const getAccessInviteLinkUrl = (subscriberId: string,) => {
 
 
-  return `https://nlw-connect-node-js.onrender.com/invites/${subscriberId}`
+  return `http://localhost:3030/invites/${subscriberId}`
 }
 
 export const accessInviteLink = async (subscriberId: string, options?: RequestInit): Promise<unknown> => {
@@ -146,7 +146,7 @@ export const accessInviteLink = async (subscriberId: string, options?: RequestIn
 export const getGetSubscriberInviteClicksUrl = (subscriberId: string,) => {
 
 
-  return `https://nlw-connect-node-js.onrender.com/subscribers/${subscriberId}/ranking/clicks`
+  return `http://localhost:3030/subscribers/${subscriberId}/ranking/clicks`
 }
 
 export const getSubscriberInviteClicks = async (subscriberId: string, options?: RequestInit): Promise<GetSubscriberInviteClicks200> => {
@@ -174,7 +174,7 @@ export const getSubscriberInviteClicks = async (subscriberId: string, options?: 
 export const getGetSubscriberInvitesCountUrl = (subscriberId: string,) => {
 
 
-  return `https://nlw-connect-node-js.onrender.com/subscribers/${subscriberId}/ranking/count`
+  return `http://localhost:3030/subscribers/${subscriberId}/ranking/count`
 }
 
 export const getSubscriberInvitesCount = async (subscriberId: string, options?: RequestInit): Promise<GetSubscriberInvitesCount200> => {
@@ -202,7 +202,7 @@ export const getSubscriberInvitesCount = async (subscriberId: string, options?: 
 export const getGetSubscriberRankingPositionUrl = (subscriberId: string,) => {
 
 
-  return `https://nlw-connect-node-js.onrender.com/subscribers/${subscriberId}/ranking/position`
+  return `http://localhost:3030/subscribers/${subscriberId}/ranking/position`
 }
 
 export const getSubscriberRankingPosition = async (subscriberId: string, options?: RequestInit): Promise<GetSubscriberRankingPosition200> => {
@@ -230,7 +230,7 @@ export const getSubscriberRankingPosition = async (subscriberId: string, options
 export const getGetRankingUrl = () => {
 
 
-  return `https://nlw-connect-node-js.onrender.com/ranking`
+  return `http://localhost:3030/ranking`
 }
 
 export const getRanking = async ( options?: RequestInit): Promise<GetRanking200> => {
