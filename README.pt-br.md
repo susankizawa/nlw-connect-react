@@ -4,7 +4,7 @@
 
 ## Descrição
 
-Este projeto foi desenvolvido durante a trilha de React no NLW Connect 2025. O projeto consiste no frontend de um site de inscrição para um evento fictício, com um sistema de ranking baseado em convites.
+Este projeto foi desenvolvido durante a trilha de React no NLW Connect 2025. O projeto consiste no frontend de um site de inscrição para um evento fictício que atualmente está sendo hospedado no [Vercel](https://vercel.com/home), com um sistema de ranking baseado em convites.
 
 - [Site publicado](https://nlw-connect-react-three.vercel.app)
 - [Repositório do backend](https://github.com/susankizawa/nlw-connect-node-js)
