@@ -1,8 +1,8 @@
 // Importing backend API methods
 import {
-  getSubscribersSubscriberIdRankingClicks,
-  getSubscribersSubscriberIdRankingCount,
-  getSubscribersSubscriberIdRankingPosition,
+  getSubscriberInviteClicks,
+  getSubscriberInvitesCount,
+  getSubscriberRankingPosition,
 } from '@/http/api'
 
 // Importing images
@@ -14,11 +14,9 @@ interface StatsProps {
 
 export async function Stats({ subscriberId }: StatsProps) {
   const { inviteCount: clickCount } =
-    await getSubscribersSubscriberIdRankingClicks(subscriberId)
-  const { inviteCount } =
-    await getSubscribersSubscriberIdRankingCount(subscriberId)
-  const { position } =
-    await getSubscribersSubscriberIdRankingPosition(subscriberId)
+    await getSubscriberInviteClicks(subscriberId)
+  const { inviteCount } = await getSubscriberInvitesCount(subscriberId)
+  const { position } = await getSubscriberRankingPosition(subscriberId)
 
   return (
     <div className="grid gap-3 md:grid-cols-3">

@@ -4,37 +4,41 @@
  * NLW Connect
  * OpenAPI spec version: 0.0.1
  */
-export type PostSubscriptionsBody = {
+export type HelloWorld200 = {
+  message: string;
+};
+
+export type SubscribeToEventBody = {
   name: string;
   email: string;
   /** @nullable */
   referrerId?: string | null;
 };
 
-export type PostSubscriptions201 = {
+export type SubscribeToEvent201 = {
   subscriberId: string;
 };
 
 /**
  * @nullable
  */
-export type GetInvitesSubscriberId302 = typeof GetInvitesSubscriberId302[keyof typeof GetInvitesSubscriberId302] | null;
+export type AccessInviteLink302 = typeof AccessInviteLink302[keyof typeof AccessInviteLink302] | null;
 
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
-export const GetInvitesSubscriberId302 = {
+export const AccessInviteLink302 = {
   null: 'null',
 } as const;
 
-export type GetSubscribersSubscriberIdRankingClicks200 = {
+export type GetSubscriberInviteClicks200 = {
   inviteCount: number;
 };
 
-export type GetSubscribersSubscriberIdRankingCount200 = {
+export type GetSubscriberInvitesCount200 = {
   inviteCount: number;
 };
 
-export type GetSubscribersSubscriberIdRankingPosition200 = {
+export type GetSubscriberRankingPosition200 = {
   /** @nullable */
   position: number | null;
 };
@@ -51,15 +55,18 @@ export type GetRanking200 = {
 
 
 
-export const getGetHelloUrl = () => {
+/**
+ * @summary Greets the world
+ */
+export const getHelloWorldUrl = () => {
 
 
   return `https://nlw-connect-node-js.onrender.com/hello`
 }
 
-export const getHello = async ( options?: RequestInit): Promise<void> => {
+export const helloWorld = async ( options?: RequestInit): Promise<HelloWorld200> => {
   
-  const res = await fetch(getGetHelloUrl(),
+  const res = await fetch(getHelloWorldUrl(),
   {      
     ...options,
     method: 'GET'
@@ -69,7 +76,7 @@ export const getHello = async ( options?: RequestInit): Promise<void> => {
 )
 
   const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: void = body ? JSON.parse(body) : {}
+  const data: HelloWorld200 = body ? JSON.parse(body) : {}
 
   return data
 }
@@ -79,26 +86,26 @@ export const getHello = async ( options?: RequestInit): Promise<void> => {
 /**
  * @summary Subscribes someone to the event
  */
-export const getPostSubscriptionsUrl = () => {
+export const getSubscribeToEventUrl = () => {
 
 
   return `https://nlw-connect-node-js.onrender.com/subscriptions`
 }
 
-export const postSubscriptions = async (postSubscriptionsBody: PostSubscriptionsBody, options?: RequestInit): Promise<PostSubscriptions201> => {
+export const subscribeToEvent = async (subscribeToEventBody: SubscribeToEventBody, options?: RequestInit): Promise<SubscribeToEvent201> => {
   
-  const res = await fetch(getPostSubscriptionsUrl(),
+  const res = await fetch(getSubscribeToEventUrl(),
   {      
     ...options,
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...options?.headers },
     body: JSON.stringify(
-      postSubscriptionsBody,)
+      subscribeToEventBody,)
   }
 )
 
   const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: PostSubscriptions201 = body ? JSON.parse(body) : {}
+  const data: SubscribeToEvent201 = body ? JSON.parse(body) : {}
 
   return data
 }
@@ -108,15 +115,15 @@ export const postSubscriptions = async (postSubscriptionsBody: PostSubscriptions
 /**
  * @summary Access invite link and redirects user
  */
-export const getGetInvitesSubscriberIdUrl = (subscriberId: string,) => {
+export const getAccessInviteLinkUrl = (subscriberId: string,) => {
 
 
   return `https://nlw-connect-node-js.onrender.com/invites/${subscriberId}`
 }
 
-export const getInvitesSubscriberId = async (subscriberId: string, options?: RequestInit): Promise<unknown> => {
+export const accessInviteLink = async (subscriberId: string, options?: RequestInit): Promise<unknown> => {
   
-  const res = await fetch(getGetInvitesSubscriberIdUrl(subscriberId),
+  const res = await fetch(getAccessInviteLinkUrl(subscriberId),
   {      
     ...options,
     method: 'GET'
@@ -136,15 +143,15 @@ export const getInvitesSubscriberId = async (subscriberId: string, options?: Req
 /**
  * @summary Get subscriber ranking invite clicks count
  */
-export const getGetSubscribersSubscriberIdRankingClicksUrl = (subscriberId: string,) => {
+export const getGetSubscriberInviteClicksUrl = (subscriberId: string,) => {
 
 
   return `https://nlw-connect-node-js.onrender.com/subscribers/${subscriberId}/ranking/clicks`
 }
 
-export const getSubscribersSubscriberIdRankingClicks = async (subscriberId: string, options?: RequestInit): Promise<GetSubscribersSubscriberIdRankingClicks200> => {
+export const getSubscriberInviteClicks = async (subscriberId: string, options?: RequestInit): Promise<GetSubscriberInviteClicks200> => {
   
-  const res = await fetch(getGetSubscribersSubscriberIdRankingClicksUrl(subscriberId),
+  const res = await fetch(getGetSubscriberInviteClicksUrl(subscriberId),
   {      
     ...options,
     method: 'GET'
@@ -154,7 +161,7 @@ export const getSubscribersSubscriberIdRankingClicks = async (subscriberId: stri
 )
 
   const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: GetSubscribersSubscriberIdRankingClicks200 = body ? JSON.parse(body) : {}
+  const data: GetSubscriberInviteClicks200 = body ? JSON.parse(body) : {}
 
   return data
 }
@@ -164,15 +171,15 @@ export const getSubscribersSubscriberIdRankingClicks = async (subscriberId: stri
 /**
  * @summary Get subscriber invites count
  */
-export const getGetSubscribersSubscriberIdRankingCountUrl = (subscriberId: string,) => {
+export const getGetSubscriberInvitesCountUrl = (subscriberId: string,) => {
 
 
   return `https://nlw-connect-node-js.onrender.com/subscribers/${subscriberId}/ranking/count`
 }
 
-export const getSubscribersSubscriberIdRankingCount = async (subscriberId: string, options?: RequestInit): Promise<GetSubscribersSubscriberIdRankingCount200> => {
+export const getSubscriberInvitesCount = async (subscriberId: string, options?: RequestInit): Promise<GetSubscriberInvitesCount200> => {
   
-  const res = await fetch(getGetSubscribersSubscriberIdRankingCountUrl(subscriberId),
+  const res = await fetch(getGetSubscriberInvitesCountUrl(subscriberId),
   {      
     ...options,
     method: 'GET'
@@ -182,7 +189,7 @@ export const getSubscribersSubscriberIdRankingCount = async (subscriberId: strin
 )
 
   const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: GetSubscribersSubscriberIdRankingCount200 = body ? JSON.parse(body) : {}
+  const data: GetSubscriberInvitesCount200 = body ? JSON.parse(body) : {}
 
   return data
 }
@@ -192,15 +199,15 @@ export const getSubscribersSubscriberIdRankingCount = async (subscriberId: strin
 /**
  * @summary Get subscriber ranking position
  */
-export const getGetSubscribersSubscriberIdRankingPositionUrl = (subscriberId: string,) => {
+export const getGetSubscriberRankingPositionUrl = (subscriberId: string,) => {
 
 
   return `https://nlw-connect-node-js.onrender.com/subscribers/${subscriberId}/ranking/position`
 }
 
-export const getSubscribersSubscriberIdRankingPosition = async (subscriberId: string, options?: RequestInit): Promise<GetSubscribersSubscriberIdRankingPosition200> => {
+export const getSubscriberRankingPosition = async (subscriberId: string, options?: RequestInit): Promise<GetSubscriberRankingPosition200> => {
   
-  const res = await fetch(getGetSubscribersSubscriberIdRankingPositionUrl(subscriberId),
+  const res = await fetch(getGetSubscriberRankingPositionUrl(subscriberId),
   {      
     ...options,
     method: 'GET'
@@ -210,7 +217,7 @@ export const getSubscribersSubscriberIdRankingPosition = async (subscriberId: st
 )
 
   const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: GetSubscribersSubscriberIdRankingPosition200 = body ? JSON.parse(body) : {}
+  const data: GetSubscriberRankingPosition200 = body ? JSON.parse(body) : {}
 
   return data
 }

@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 // Importing backend API methods
-import { postSubscriptions } from '@/http/api'
+import { subscribeToEvent } from '@/http/api'
 
 // Importing images
 import { ArrowRight, Mail, User } from 'lucide-react'
@@ -41,7 +41,7 @@ export function SubscriptionForm() {
 
   async function onSubscribe({ name, email }: SubscriptionSchema) {
     const referrerId = searchParams.get('referrer')
-    const { subscriberId } = await postSubscriptions({
+    const { subscriberId } = await subscribeToEvent({
       name,
       email,
       referrerId,
