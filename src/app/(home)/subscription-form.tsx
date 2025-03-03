@@ -4,7 +4,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { set, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 // Importing backend API methods
@@ -32,6 +32,7 @@ export function SubscriptionForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle')
+  const [serverError, setServerError] = useState(false)
 
   const {
     register,
@@ -57,6 +58,8 @@ export function SubscriptionForm() {
       setTimeout(() => router.push(`/invite/${subscriberId}`), 500) // 500ms = 0.5s
     } catch (error) {
       if (error instanceof Error) {
+        setServerError(true)
+        setStatus('idle')
         console.error(error)
       }
     }
@@ -72,6 +75,13 @@ export function SubscriptionForm() {
       </h2>
 
       <div className="space-y-3">
+        {/* Errors */}
+        {serverError && (
+          <p className="text-danger text-xs font-semibold">
+            Oops, something went wrong. Please try again.
+          </p>
+        )}
+
         {/* Name field */}
         <div className="space-y-2">
           <TextInputRoot>
