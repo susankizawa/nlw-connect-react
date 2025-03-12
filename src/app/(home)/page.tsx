@@ -6,6 +6,7 @@ import { Suspense } from 'react'
 import { Radio } from 'lucide-react'
 import logo from '../../assets/logo.svg'
 
+import { Button } from '@/components/button'
 // Importing local components
 import { SubscriptionForm } from './subscription-form'
 
@@ -46,10 +47,32 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Subscription form */}
-        <Suspense>
-          <SubscriptionForm />
-        </Suspense>
+        {/* Subscription */}
+        <div className="bg-gray-700 border border-gray-600 rounded-2xl p-8 space-y-6 w-full md:max-w-[440px]">
+          <h2 className="font-heading font-semibold text-gray-200 text-xl">
+            Inscrição
+          </h2>
+
+          <Suspense>
+            <SubscriptionForm />
+          </Suspense>
+
+          {/* Divider */}
+          <div className="flex flex-row w-full justify-center items-center font-semibold text-gray-200">
+            <hr className="flex-1" />
+            <span className="px-5">Ou se inscrever usando</span>
+            <hr className="flex-1" />
+          </div>
+
+          {/* Subscribe through other identity providers */}
+          <a
+            href="https://discord.com/oauth2/authorize?client_id=1348405607564054538&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3030%2Foauth%2Fdiscord%2Fcallback&scope=identify+email"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Login pelo Discord</Button>
+          </a>
+        </div>
       </div>
     </div>
   )
