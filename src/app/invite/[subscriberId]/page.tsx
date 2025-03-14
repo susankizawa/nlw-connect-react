@@ -7,6 +7,7 @@ import logo from '../../../assets/logo.svg'
 // Importing local components
 import { InviteLinkInput } from './invite-link-input'
 import { Ranking } from './ranking'
+import { ShareButtons } from './share-buttons'
 import { Stats } from './stats'
 
 interface InviteProps {
@@ -48,6 +49,8 @@ export default async function Invite(props: InviteProps) {
               inscrições:
             </p>
           </div>
+
+          <ShareButtons url={inviteLink} />
 
           <InviteLinkInput inviteLink={inviteLink} />
 
